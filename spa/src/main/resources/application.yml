@@ -1,0 +1,15 @@
+spring:
+  driver-class-name: com.mysql.jdbc.Driver
+  datasource:
+    url: jdbc:mysql://localhost:3307/spa
+    username: vitalii
+    password: password
+
+server:
+  port: 8888
+
+spa:
+  security:
+    username: spa_user
+    password: spa_pass
+    role: ADMIN

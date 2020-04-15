@@ -1,0 +1,15 @@
+<mat-card class="card">
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>Name: {{employee.name}}</mat-list-item>
+            <mat-list-item>Department: {{employee.department.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Is Active:  {{employee.isActive}}</mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="close()">CLOSE</button>
+
+    </mat-card-actions>
+</mat-card>
