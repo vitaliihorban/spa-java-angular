@@ -6,6 +6,8 @@
 3. enter following credentials 
 * login: spa_user
 * password: spa_pass
-4. to use SWAGGER UI enter `http://localhost:8888/swagger-ui.html`
+4. to use SWAGGER UI enter `http://localhost:8888/swagger-ui.html` and use following credentials
+* login: spa_user
+* password: spa_pass
 
     
