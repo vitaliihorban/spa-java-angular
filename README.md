@@ -6,5 +6,6 @@
 3. enter following credentials 
 * login: db_user
 * password: db_pass
+4. to use SWAGGER UI enter `http://localhost:8888/swagger-ui.html`
 
     
