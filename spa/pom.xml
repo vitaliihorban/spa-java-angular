@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.spa</groupId>
     <artifactId>spa</artifactId>
-    <version>1</version>
+    <version>1.0</version>
     <name>spa-be</name>
     <description>SPA project on Spring Boot</description>
 

@@ -1,9 +1,9 @@
 spring:
   driver-class-name: com.mysql.jdbc.Driver
   datasource:
-    url: jdbc:mysql://localhost:3307/spa
-    username: vitalii
-    password: password
+    url: jdbc:mysql://spa-mysql:3306/spa
+    username: SPA_USER
+    password: SPA_PASSWORD
 
 server:
   port: 8888

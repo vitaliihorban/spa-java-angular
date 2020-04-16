@@ -1,0 +1,41 @@
+version: '3'
+services:
+  spa-mysql:
+    restart: always
+    container_name: spa-mysql
+    image: mysql
+    environment:
+      MYSQL_DATABASE: spa
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_PASSWORD: SPA_PASSWORD
+      MYSQL_USER: SPA_USER
+
+    volumes:
+      - ./DumpSPA.sql:/docker-entrypoint-initdb.d/DumpSPA.sql
+    ports:
+      - "3308:3306"
+  spa-be:
+    restart: on-failure
+    container_name: spa-be
+    build: ./spa
+    expose:
+      - "8888"
+    ports:
+      - 8888:8888
+    environment:
+      WAIT_HOSTS: spa-mysql:3308
+    depends_on:
+      - spa-mysql
+  spa-ui:
+    container_name: spa-ui
+    restart: on-failure
+    build: ./spa-ui
+    expose:
+      - "4200"
+    ports:
+      - 4200:4200
+    environment:
+      WAIT_HOSTS: java:8888
+    depends_on:
+      - spa-be
