@@ -3,7 +3,6 @@ package com.spa.web.rest;
 import com.spa.service.EmployeeService;
 import com.spa.service.dto.EmployeeBaseDTO;
 import com.spa.service.dto.EmployeeExtendedDTO;
-import com.spa.domain.Sort;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -30,9 +29,7 @@ public class EmployeeResource {
     @ApiOperation(value = "Create new employee", response = EmployeeExtendedDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+            @ApiResponse(code = 401, message = "You are not authorized to view the resource")
     })
     @PostMapping("/employees")
     public ResponseEntity<EmployeeExtendedDTO> save(
@@ -44,9 +41,7 @@ public class EmployeeResource {
     @ApiOperation(value = "Get list of all employees", response = List.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+            @ApiResponse(code = 401, message = "You are not authorized to view the resource")
     })
     @GetMapping("/employees")
     public Page<EmployeeExtendedDTO> findAllEmployees(
@@ -65,9 +60,7 @@ public class EmployeeResource {
     @ApiOperation(value = "Get employee", response = EmployeeExtendedDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+            @ApiResponse(code = 401, message = "You are not authorized to view the resource")
     })
     @GetMapping("/employees/{id}")
     public ResponseEntity<EmployeeExtendedDTO> findEmployeeById(
@@ -79,9 +72,7 @@ public class EmployeeResource {
     @ApiOperation(value = "Update employee", response = EmployeeExtendedDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+            @ApiResponse(code = 401, message = "You are not authorized to view the resource")
     })
     @PutMapping("/employees/{id}")
     public ResponseEntity<EmployeeExtendedDTO> update(
@@ -93,9 +84,7 @@ public class EmployeeResource {
     @ApiOperation(value = "Delete employee")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+            @ApiResponse(code = 401, message = "You are not authorized to view the resource")
     })
     @DeleteMapping("/employees/{id}")
     public ResponseEntity<Void> delete(
