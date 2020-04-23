@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface EmployeeRepository extends AbstructCrudRepository<Integer, Employee> {
 
+    int countAllEmployeeByName(String name);
+
     int countAllEmployee();
 
     Page<Employee> findAll(Integer page, Integer size);

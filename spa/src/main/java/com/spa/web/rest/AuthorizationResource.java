@@ -21,6 +21,6 @@ public class AuthorizationResource {
     })
     @GetMapping("/login")
     public ResponseEntity login() {
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }

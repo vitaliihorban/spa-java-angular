@@ -6,6 +6,7 @@ import com.spa.repository.rowmapper.DepartmentRowMapper;
 import com.spa.domain.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
@@ -23,19 +24,17 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     private final JdbcTemplate jdbcTemplate;
     private final DepartmentRowMapper departmentRowMapper;
-    private final KeyHolder keyHolder;
 
     @Autowired
     public DepartmentRepositoryImpl(JdbcTemplate jdbcTemplate,
-                                    DepartmentRowMapper departmentRowMapper,
-                                    KeyHolder keyHolder) {
+                                    DepartmentRowMapper departmentRowMapper) {
         this.jdbcTemplate = jdbcTemplate;
         this.departmentRowMapper = departmentRowMapper;
-        this.keyHolder = keyHolder;
     }
 
     @Override
     public Integer save(Department entity) {
+        KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(c -> {
             PreparedStatement ps = c.prepareStatement(CREATE_DEPARTMENT_QUERY, new String[]{"id"});
             ps.setString(1, entity.getName());
