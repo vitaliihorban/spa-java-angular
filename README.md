@@ -10,4 +10,6 @@
 * login: spa_user
 * password: spa_pass
 
-    
+## Not implemented
+1. Validations 
+2. Big test coverage
